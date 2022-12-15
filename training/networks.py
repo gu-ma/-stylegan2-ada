@@ -297,7 +297,7 @@ def G_mapping(
     mapping_nonlinearity    = 'lrelu',      # Activation function: 'relu', 'lrelu', etc.
     normalize_latents       = True,         # Normalize latent vectors (Z) before feeding them to the mapping layers?
     label_fmaps             = None,         # Label embedding dimensionality, None = same as latent_size.
-    dtype                   = 'float32',    # Data type to use for intermediate activations and outputs.
+    dtype                   = 'float16',    # Data type to use for intermediate activations and outputs.
 
     **_kwargs,                              # Ignore unrecognized keyword args.
 ):
@@ -360,7 +360,7 @@ def G_synthesis(
     randomize_noise     = True,         # True = randomize noise inputs every time (non-deterministic), False = read noise inputs from variables.
     architecture        = 'skip',       # Architecture: 'orig', 'skip', 'resnet'.
     nonlinearity        = 'lrelu',      # Activation function: 'relu', 'lrelu', etc.
-    dtype               = 'float32',    # Data type to use for intermediate activations and outputs.
+    dtype               = 'float16',    # Data type to use for intermediate activations and outputs.
     num_fp16_res        = 0,            # Use FP16 for the N highest resolutions, regardless of dtype.
     conv_clamp          = None,         # Clamp the output of convolution layers to [-conv_clamp, +conv_clamp], None = disable clamping.
     resample_kernel     = [1,3,3,1],    # Low-pass filter to apply when resampling activations, None = box filter.
